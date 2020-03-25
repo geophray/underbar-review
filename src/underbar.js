@@ -96,7 +96,7 @@
   _.reject = function(collection, test) {
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
-    var oppositeTest = function(element){
+    var oppositeTest = function(element) {
       return !test(element);
     };
     return _.filter(collection, oppositeTest);
@@ -223,15 +223,12 @@
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
     iterator = iterator || _.identity;
-    return _.every(collection, function(passTest = false, item) {
-      if (passTest) {
+    return _.reduce(collection, function(somethingPassed, item) {
+      if (somethingPassed) {
         return true;
-      } else {
-        return !!iterator(item);
       }
-      return false;
-    });
-
+      return !!iterator(item);
+    }, false);
   };
 
 

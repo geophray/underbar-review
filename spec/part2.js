@@ -195,8 +195,8 @@
         // Replace this line with an `expect` statement that tests
         // the behavior described by the `it` string
         //throw new Error('This test is missing.');
-        var destination = { a: 1};
-        var source = { a : 2};
+        var destination = { a: 1 };
+        var source = { a: 2 };
         var extended = _.extend(destination, source);
         expect(extended.a).to.equal(2);
       });
@@ -277,9 +277,9 @@
         // Replace this line with an `expect` statement that tests
         // the behavior described by the `it` string
         //throw new Error('This test is missing.');
-        var destination = { a: 1};
-        var source = { a: 2};
-        _.defaults(destination,source);
+        var destination = { a: 1 };
+        var source = { a: 2 };
+        _.defaults(destination, source);
         expect(destination.a).to.equal(1);
       });
 
